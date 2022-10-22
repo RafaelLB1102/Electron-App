@@ -1,19 +1,79 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' http://localhost:5984 ; script-src 'self'">
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css"">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' http://localhost:5984 ; script-src 'self'">
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css"">
     <title>Hello World!</title>
   </head>
   <body>
-    <h1>Hello World!</h1>
-    We are using Node.js <span id="node-version"></span>,
-    Chromium <span id="chrome-version"></span>,
-    and Electron <span id="electron-version"></span>.
-    <script src="node_modules/pouchdb/dist/pouchdb.min.js"></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="DataBase.js"></script>
+    <h1>Bienvenido al DANE</h1>
+    <div>
+      <p>Este es el formulario que debe llenar:</p>
+    </div>
+    
+    <div class="container section">
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Nombre :</span>
+        <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre"
+          aria-describedby="basic-addon1" id="name">
+      </div>
+
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Apellido :</span>
+        <input type="text" class="form-control" placeholder="Apellido" aria-label="Apellido"
+          aria-describedby="basic-addon1" id="lastnames">
+      </div>
+
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Telefono Celular :</span>
+        <input type="text" class="form-control" placeholder="Telefono Celular" aria-label="Telefono Celular"
+          aria-describedby="basic-addon1" id="cellphone">
+      </div>
+
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Dirección del predio:</span>
+        <input type="text" class="form-control" placeholder="Dirección del predio" aria-label="Dirección del predio"
+          aria-describedby="basic-addon1" id="direction">
+      </div>
+
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon2">Correo Electrónico</span>
+        <input type="text" class="form-control" placeholder="Correo Electronico" aria-label="Correo Electronico"
+          aria-describedby="basic-addon2" id="email">
+      </div>
+
+      <div class="input-group mb-3">
+        <select class="form-select" aria-label="Default select example" id="stratum">
+          <option selected>Seleccione un estrato</option>
+          <option value="1">Uno</option>
+          <option value="2">Dos</option>
+          <option value="3">Tres</option>
+          <option value="4">Cuatro</option>
+          <option value="5">Cinco</option>
+          <option value="6">Seis</option>
+        </select>
+      </div>
+  </div>
+
+  <div class="container section">
+    <a href="" type="button" class="btn btn-success">
+      Enviar registro
+    </a>
+    
+    <a href="" type="button" class="btn btn-info">
+      Ver registros
+    </a>
+
+    <a href="" type="button" class="btn btn-primary">
+      Sincronizar registros
+    </a>
+  </div>
+  <script src="node_modules/pouchdb/dist/pouchdb.min.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="DataBase.js"></script>
   </body>
+
 </html>
