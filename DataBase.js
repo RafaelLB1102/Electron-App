@@ -1,16 +1,9 @@
 var localDB = new PouchDB('application');
 var remoteDB = new PouchDB('http://admin:hola123@localhost:5984/application');
 
-
-
 localDB.info().then(function (info) {
     console.log(info);
 })
-
-
-
-
-
 
 /* Creating a document */
 
@@ -61,8 +54,9 @@ const clearInputs = () => {
 }
 
 
-let show = document.getElementById("show")
+var show = document.getElementById("show")
 var createButton = document.getElementById("createButton")
+var syncButton = document.getElementById("sync")
 if (createButton) {
     createButton.addEventListener("click", () => {
         let name = document.getElementById("name").value
@@ -120,5 +114,9 @@ if (createButton) {
             }
         })
         show.disabled = true
+    })
+
+    syncButton.addEventListener("click", ()=>{
+        localDB.sync(remoteDB)
     })
 }
