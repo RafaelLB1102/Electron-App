@@ -117,6 +117,10 @@ if (createButton) {
     })
 
     syncButton.addEventListener("click", ()=>{
-        localDB.sync(remoteDB)
+        localDB.replicate.to(remoteDB).on('complete', function () {
+            alert("Sincronización completada")
+          }).on('error', function (err) {
+            alert("Hubo un error \n" + err + "\n Intente de nuevo y revise su conexión a la base de datos remota")
+          });
     })
 }
